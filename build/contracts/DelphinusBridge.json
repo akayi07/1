@@ -199,16 +199,16 @@
     "absolutePath": "project:/contracts/DelphinusBridge.sol",
     "exportedSymbols": {
       "BridgeInfo": [
-        1576
+        1686
       ],
       "DelphinusBridge": [
         1547
       ],
       "PoolInfo": [
-        1558
+        1668
       ],
       "TokenInfo": [
-        1561
+        1671
       ]
     },
     "id": 1548,
@@ -233,7 +233,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1548,
-        "sourceUnit": 1577,
+        "sourceUnit": 1687,
         "src": "63:19:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -290,7 +290,7 @@
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_BridgeInfo_$1576_memory_ptr",
+                    "typeIdentifier": "t_struct$_BridgeInfo_$1686_memory_ptr",
                     "typeString": "struct BridgeInfo"
                   },
                   "typeName": {
@@ -303,13 +303,13 @@
                         "217:10:5"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1576,
+                      "referencedDeclaration": 1686,
                       "src": "217:10:5"
                     },
-                    "referencedDeclaration": 1576,
+                    "referencedDeclaration": 1686,
                     "src": "217:10:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_BridgeInfo_$1576_storage_ptr",
+                      "typeIdentifier": "t_struct$_BridgeInfo_$1686_storage_ptr",
                       "typeString": "struct BridgeInfo"
                     }
                   },
@@ -438,7 +438,7 @@
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_array$_t_struct$_TokenInfo_$1561_memory_ptr_$dyn_memory_ptr",
+                    "typeIdentifier": "t_array$_t_struct$_TokenInfo_$1671_memory_ptr_$dyn_memory_ptr",
                     "typeString": "struct TokenInfo[]"
                   },
                   "typeName": {
@@ -452,13 +452,13 @@
                           "349:9:5"
                         ],
                         "nodeType": "IdentifierPath",
-                        "referencedDeclaration": 1561,
+                        "referencedDeclaration": 1671,
                         "src": "349:9:5"
                       },
-                      "referencedDeclaration": 1561,
+                      "referencedDeclaration": 1671,
                       "src": "349:9:5",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_TokenInfo_$1561_storage_ptr",
+                        "typeIdentifier": "t_struct$_TokenInfo_$1671_storage_ptr",
                         "typeString": "struct TokenInfo"
                       }
                     },
@@ -466,7 +466,7 @@
                     "nodeType": "ArrayTypeName",
                     "src": "349:11:5",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_array$_t_struct$_TokenInfo_$1561_storage_$dyn_storage_ptr",
+                      "typeIdentifier": "t_array$_t_struct$_TokenInfo_$1671_storage_$dyn_storage_ptr",
                       "typeString": "struct TokenInfo[]"
                     }
                   },
@@ -945,7 +945,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2022-12-09T07:03:41.710Z",
+  "updatedAt": "2022-12-16T13:25:00.138Z",
   "devdoc": {
     "kind": "dev",
     "methods": {
