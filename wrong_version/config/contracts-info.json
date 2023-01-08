@@ -56,26 +56,26 @@
       "5": {
         "events": {},
         "links": {},
-        "address": "0x9f34C88273b96ba1b2DCA46D7Ea748965CF79107",
-        "transactionHash": "0xbeecb2cd729c5c9467b0cc04645367d3d17e26025e5e877c4d77056a1c0a2c8b"
+        "address": "0x39BD71b4E21b9c0FDFfdB801c3b4089a9F0E91e1",
+        "transactionHash": "0x086f8bf7fd12d4d59b21bba8db3bad5f6a7d1b9b4ecdbf6fd177a2ce4362cabb"
       },
       "97": {
         "events": {},
         "links": {},
-        "address": "0x3f4CD68ab08fE2696836958f5E4AFFF3ABCB6a68",
-        "transactionHash": "0xf4c8bb8baac41e54d8268b004ca5dae5bef813afa2fc8bf47d46e8bcdf52da0f"
+        "address": "0x0C65846C25331958b99b2c9f487D3c6c8f2E6BB1",
+        "transactionHash": "0xbba7c7cfb0f8fdf51761edac8182b52028fcb691aef26a81c273a15082775bd9"
       },
       "338": {
         "events": {},
         "links": {},
-        "address": "0x699d7B5AeEa3f355840b788b3D4eB2211e8cc6F5",
-        "transactionHash": "0xa1f1ddcdd43d1b5efb65f7523229c17349c4a0635a54529cec54659318f14918"
+        "address": "0xdf30620900e3ba2e69602a7d77f690c644aDfE98",
+        "transactionHash": "0x73886c272a8056e666ffae340cd3109b3a8ce7dcf89d11d707958c22a108f2fc"
       },
       "2814": {
         "events": {},
         "links": {},
-        "address": "0x804f6B1272Ce70f55B6b1FE197e1F0B76F40c653",
-        "transactionHash": "0x3606627567017b220fb530e6c2b3abe92c87a899b3fbe850366184863dad99eb"
+        "address": "0xeA0c8307753580cC7B44C6aa1E35B8c67dFeB006",
+        "transactionHash": "0x0d7e2e259792923da389be4e9b6180dfd6e4975dc08746f5eab8f7fa168b6af6"
       }
     }
   },
@@ -119,9 +119,9 @@
                   "type": "uint256"
                 },
                 {
-                  "internalType": "uint256",
+                  "internalType": "uint16",
                   "name": "verifierID",
-                  "type": "uint256"
+                  "type": "uint16"
                 }
               ],
               "internalType": "struct BridgeInfo",
@@ -248,11 +248,6 @@
               "internalType": "uint256[]",
               "name": "verify_data",
               "type": "uint256[]"
-            },
-            {
-              "internalType": "uint8",
-              "name": "_vid",
-              "type": "uint8"
             },
             {
               "internalType": "uint256",
