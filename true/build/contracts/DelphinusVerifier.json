@@ -1,0 +1,198 @@
+{
+  "contractName": "DelphinusVerifier",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "args",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "verifyDelphinusTx",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"args\",\"type\":\"uint256[]\"}],\"name\":\"verifyDelphinusTx\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"verifyDelphinusTx(uint256[])\":{\"details\":\"snark verification stub\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Verifier.sol\":\"DelphinusVerifier\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Verifier.sol\":{\"keccak256\":\"0x982017a246ed1f82a2295d9632c49c5e5ecbba854f9b865a495b0501ad0b56f9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://16995ccd42dbecaf6026fc6ba66ca59bd982904d0378d77f9fbe351f23c62ef7\",\"dweb:/ipfs/QmYdLnH8nULk3fuyV5itvhA67w1AarCjEH51WVVwR6Gjwf\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0;\n\ninterface DelphinusVerifier {\n    /**\n     * @dev snark verification stub\n     */\n    function verifyDelphinusTx(uint256[] calldata args) external returns (bool);\n}\n",
+  "sourcePath": "/home/frank/zkcross-lerna/packages/solidity/contracts/Verifier.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Verifier.sol",
+    "exportedSymbols": {
+      "DelphinusVerifier": [
+        4034
+      ]
+    },
+    "id": 4035,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4024,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:24"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "DelphinusVerifier",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4034,
+        "linearizedBaseContracts": [
+          4034
+        ],
+        "name": "DelphinusVerifier",
+        "nameLocation": "74:17:24",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 4025,
+              "nodeType": "StructuredDocumentation",
+              "src": "98:47:24",
+              "text": " @dev snark verification stub"
+            },
+            "functionSelector": "b91b0b83",
+            "id": 4033,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verifyDelphinusTx",
+            "nameLocation": "159:17:24",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4029,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4028,
+                  "mutability": "mutable",
+                  "name": "args",
+                  "nameLocation": "196:4:24",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4033,
+                  "src": "177:23:24",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4026,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "177:7:24",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4027,
+                    "nodeType": "ArrayTypeName",
+                    "src": "177:9:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "176:25:24"
+            },
+            "returnParameters": {
+              "id": 4032,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4031,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4033,
+                  "src": "220:4:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 4030,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "220:4:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "219:6:24"
+            },
+            "scope": 4034,
+            "src": "150:76:24",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4035,
+        "src": "64:164:24",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:190:24"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.16+commit.07a7930e.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-01-08T05:45:30.422Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "verifyDelphinusTx(uint256[])": {
+        "details": "snark verification stub"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
