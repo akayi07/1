@@ -1,0 +1,931 @@
+{
+  "contractName": "DelphinusBridge",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getBridgeInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "chain_id",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint32",
+              "name": "amount_token",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "amount_pool",
+              "type": "uint32"
+            },
+            {
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "merkle_root",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "rid",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint16",
+              "name": "verifierID",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct BridgeInfo",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "token",
+          "type": "uint256"
+        }
+      ],
+      "name": "addToken",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "allTokens",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "token_uid",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct TokenInfo[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "txaddr",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "sideEffect",
+          "type": "bool"
+        }
+      ],
+      "name": "addTransaction",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "vaddr",
+          "type": "address"
+        }
+      ],
+      "name": "addVerifier",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "l2account",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "tx_data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "verify_data",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_rid",
+          "type": "uint256"
+        }
+      ],
+      "name": "verify",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"token\",\"type\":\"uint256\"}],\"name\":\"addToken\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"txaddr\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"sideEffect\",\"type\":\"bool\"}],\"name\":\"addTransaction\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"vaddr\",\"type\":\"address\"}],\"name\":\"addVerifier\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"allTokens\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"token_uid\",\"type\":\"uint256\"}],\"internalType\":\"struct TokenInfo[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"l2account\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBridgeInfo\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"chain_id\",\"type\":\"uint128\"},{\"internalType\":\"uint32\",\"name\":\"amount_token\",\"type\":\"uint32\"},{\"internalType\":\"uint32\",\"name\":\"amount_pool\",\"type\":\"uint32\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"merkle_root\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"rid\",\"type\":\"uint256\"},{\"internalType\":\"uint16\",\"name\":\"verifierID\",\"type\":\"uint16\"}],\"internalType\":\"struct BridgeInfo\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"tx_data\",\"type\":\"bytes\"},{\"internalType\":\"uint256[]\",\"name\":\"verify_data\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256\",\"name\":\"_rid\",\"type\":\"uint256\"}],\"name\":\"verify\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getBridgeInfo()\":{\"details\":\"snark verification stub\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DelphinusBridge.sol\":\"DelphinusBridge\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/DelphinusBridge.sol\":{\"keccak256\":\"0xdf4aee85b99c6e5c7331d34a4ac0da2c1c8e43e17120e26907b694c8f57b3140\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://e64cb948311eea6070578f5adb4d987285964857b88d12f1e7ff724db6b4b384\",\"dweb:/ipfs/QmXS6BQk1zfni2XtQ86iGGaT7HQn7ir9d6FVtbREwv4iR6\"]},\"project:/contracts/MKT.sol\":{\"keccak256\":\"0x28feed9fdc70f6aa61f0f7ccb4b2bce57d2fe292842a8f98a572a4e7420e6ce5\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f7b9f46df29aa3086bf78eccfe33a780e574b667743c2d0313b566f341fa714d\",\"dweb:/ipfs/QmPk2w2hwtSzg1mTGcfvHW52RirxUkrF8LvH3zwryr5BoM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.8.0;\nimport \"./MKT.sol\";\n\n\ninterface DelphinusBridge {\n    /**\n     * @dev snark verification stub\n     */\n    function getBridgeInfo() external view returns (BridgeInfo memory);\n    function addToken(uint256 token) external returns (uint32);\n    function allTokens() external view returns (TokenInfo[] memory);\n\n    function addTransaction(address txaddr, bool sideEffect) external returns (uint256);\n    function addVerifier(address vaddr) external returns (uint256);\n    function deposit(\n        address token,\n        uint256 amount,\n        uint256 l2account\n    ) external; \n\n    function verify(\n        bytes calldata tx_data,\n        uint256[] calldata verify_data, // [8]: old root, [9]: new root, [10]: sha_low, [11]: sha_high\n        uint256 _rid\n    ) external;\n}\n",
+  "sourcePath": "/home/frank/zkcross-lerna/packages/solidity/contracts/DelphinusBridge.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/DelphinusBridge.sol",
+    "exportedSymbols": {
+      "BridgeInfo": [
+        1577
+      ],
+      "DelphinusBridge": [
+        1548
+      ],
+      "PoolInfo": [
+        1559
+      ],
+      "TokenInfo": [
+        1562
+      ]
+    },
+    "id": 1549,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1490,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:5"
+      },
+      {
+        "absolutePath": "project:/contracts/MKT.sol",
+        "file": "./MKT.sol",
+        "id": 1491,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1549,
+        "sourceUnit": 1578,
+        "src": "63:19:5",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "DelphinusBridge",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 1548,
+        "linearizedBaseContracts": [
+          1548
+        ],
+        "name": "DelphinusBridge",
+        "nameLocation": "95:15:5",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1492,
+              "nodeType": "StructuredDocumentation",
+              "src": "117:47:5",
+              "text": " @dev snark verification stub"
+            },
+            "functionSelector": "ede7cebd",
+            "id": 1498,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getBridgeInfo",
+            "nameLocation": "178:13:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1493,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "191:2:5"
+            },
+            "returnParameters": {
+              "id": 1497,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1496,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1498,
+                  "src": "217:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_BridgeInfo_$1577_memory_ptr",
+                    "typeString": "struct BridgeInfo"
+                  },
+                  "typeName": {
+                    "id": 1495,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1494,
+                      "name": "BridgeInfo",
+                      "nameLocations": [
+                        "217:10:5"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1577,
+                      "src": "217:10:5"
+                    },
+                    "referencedDeclaration": 1577,
+                    "src": "217:10:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_BridgeInfo_$1577_storage_ptr",
+                      "typeString": "struct BridgeInfo"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "216:19:5"
+            },
+            "scope": 1548,
+            "src": "169:67:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "179d375c",
+            "id": 1505,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addToken",
+            "nameLocation": "250:8:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1501,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1500,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "267:5:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1505,
+                  "src": "259:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1499,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "259:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "258:15:5"
+            },
+            "returnParameters": {
+              "id": 1504,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1503,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1505,
+                  "src": "292:6:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  },
+                  "typeName": {
+                    "id": 1502,
+                    "name": "uint32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "292:6:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint32",
+                      "typeString": "uint32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "291:8:5"
+            },
+            "scope": 1548,
+            "src": "241:59:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "6ff97f1d",
+            "id": 1512,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "allTokens",
+            "nameLocation": "314:9:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1506,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "323:2:5"
+            },
+            "returnParameters": {
+              "id": 1511,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1510,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1512,
+                  "src": "349:18:5",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_TokenInfo_$1562_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct TokenInfo[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1508,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 1507,
+                        "name": "TokenInfo",
+                        "nameLocations": [
+                          "349:9:5"
+                        ],
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 1562,
+                        "src": "349:9:5"
+                      },
+                      "referencedDeclaration": 1562,
+                      "src": "349:9:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_TokenInfo_$1562_storage_ptr",
+                        "typeString": "struct TokenInfo"
+                      }
+                    },
+                    "id": 1509,
+                    "nodeType": "ArrayTypeName",
+                    "src": "349:11:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_TokenInfo_$1562_storage_$dyn_storage_ptr",
+                      "typeString": "struct TokenInfo[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "348:20:5"
+            },
+            "scope": 1548,
+            "src": "305:64:5",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "4e5ca59e",
+            "id": 1521,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addTransaction",
+            "nameLocation": "384:14:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1517,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1514,
+                  "mutability": "mutable",
+                  "name": "txaddr",
+                  "nameLocation": "407:6:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1521,
+                  "src": "399:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1513,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "399:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1516,
+                  "mutability": "mutable",
+                  "name": "sideEffect",
+                  "nameLocation": "420:10:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1521,
+                  "src": "415:15:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1515,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:4:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "398:33:5"
+            },
+            "returnParameters": {
+              "id": 1520,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1519,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1521,
+                  "src": "450:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1518,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:9:5"
+            },
+            "scope": 1548,
+            "src": "375:84:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "9000b3d6",
+            "id": 1528,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addVerifier",
+            "nameLocation": "473:11:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1524,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1523,
+                  "mutability": "mutable",
+                  "name": "vaddr",
+                  "nameLocation": "493:5:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1528,
+                  "src": "485:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1522,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "485:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "484:15:5"
+            },
+            "returnParameters": {
+              "id": 1527,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1526,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1528,
+                  "src": "518:7:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1525,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "518:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "517:9:5"
+            },
+            "scope": 1548,
+            "src": "464:63:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "0efe6a8b",
+            "id": 1537,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nameLocation": "541:7:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1535,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1530,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "566:5:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1537,
+                  "src": "558:13:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1529,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "558:7:5",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1532,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "589:6:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1537,
+                  "src": "581:14:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1531,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1534,
+                  "mutability": "mutable",
+                  "name": "l2account",
+                  "nameLocation": "613:9:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1537,
+                  "src": "605:17:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1533,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "605:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "548:80:5"
+            },
+            "returnParameters": {
+              "id": 1536,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "637:0:5"
+            },
+            "scope": 1548,
+            "src": "532:106:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "7e024563",
+            "id": 1547,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify",
+            "nameLocation": "654:6:5",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1545,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1539,
+                  "mutability": "mutable",
+                  "name": "tx_data",
+                  "nameLocation": "685:7:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1547,
+                  "src": "670:22:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1538,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "670:5:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1542,
+                  "mutability": "mutable",
+                  "name": "verify_data",
+                  "nameLocation": "721:11:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1547,
+                  "src": "702:30:5",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_calldata_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1540,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "702:7:5",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1541,
+                    "nodeType": "ArrayTypeName",
+                    "src": "702:9:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1544,
+                  "mutability": "mutable",
+                  "name": "_rid",
+                  "nameLocation": "813:4:5",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1547,
+                  "src": "805:12:5",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1543,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "805:7:5",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "660:163:5"
+            },
+            "returnParameters": {
+              "id": 1546,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "832:0:5"
+            },
+            "scope": 1548,
+            "src": "645:188:5",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1549,
+        "src": "85:750:5",
+        "usedErrors": []
+      }
+    ],
+    "src": "39:797:5"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.16+commit.07a7930e.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-01-08T10:02:01.398Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getBridgeInfo()": {
+        "details": "snark verification stub"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
